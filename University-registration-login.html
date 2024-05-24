@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<title>Login SignUp</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- It will redirect to the Home Page after submitting the form -->
+  <script>
+  $(document).ready(function(){
+    $("form").submit(function(){
+      alert("Great Job !");
+    });
+  });
+  </script>
+</head>
+<body>
+		<div class="form-box">
+			<div class="button-box" style="display: flex;
+            justify-content: center;
+            align-items: center;">
+				<div id="btn"></div>
+				<button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #fff;">University Log In</button>
+				<button type="button" class="toggle-btn" id="reg" onclick="register()">University Register</button>
+			</div>
+			<div class="social-icons">
+				<img src="images/icon/fb2.png">
+				<img src="images/icon/insta2.png">
+				<img src="images/icon/tt2.png">
+			</div>
+			
+			<!-- Login Form -->
+			<form id="login" class="input-group" action="uni_verify.php" method="post">
+				<div class="inp">
+					<img src="images/icon/user.png"><input type="text" id="email" class="input-field" placeholder="University Name" style="width: 88%; border:none;" required="required" name="uni_name">
+				</div>
+				<div class="inp">
+					<img src="images/icon/password.png"><input type="password" id="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required" name="uni_password">
+				</div>
+				<input type="checkbox" class="check-box">Remember Password
+				<button type="submit" class="submit-btn" value="register">Log In</button>
+			</form>
+
+
+			<div class="other" id="other">
+				<div class="instead">
+					<h3>or</h3>
+				</div>
+				<button class="connect" onclick="google()">
+					<img src="images/icon/google.png"><span>Sign in with Google</span>
+				</button>
+			</div>
+			
+			<!-- Registration Form -->
+			<form id="register" class="input-group" action="uni_register.php" method="post">
+				<input type="text" class="input-field" placeholder="University Name" required="required" name="uni_name">
+				<input type="email" class="input-field" placeholder="University Email" required="required" name="uni_email">
+				<input type="password" class="input-field" placeholder="Create Password" name="uni_password" required="required">
+				<input type="text" class="input-field" placeholder="University city" required="required" name="uni_city">
+				<input type="password" class="input-field" placeholder="Confirm Password"  required="required">
+				<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
+				<button type="submit" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+			</form>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
